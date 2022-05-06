@@ -1,5 +1,5 @@
-import LoginPage from "@containers/LoginPage";
+import LoginPage from '@containers/LoginPage';
 
-const Login = ()=> <LoginPage />;
+const Login = () => <LoginPage />;
 
 export default Login;

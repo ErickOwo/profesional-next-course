@@ -1,4 +1,4 @@
-odule.exports = {
+module.exports = {
     env: {
       browser: true,
       amd: true,
@@ -13,6 +13,6 @@ odule.exports = {
       "next/core-web-vitals",
     ],
     rules: {
-      semi: ["error", "alwals"],
+      semi: ["error", "always"],
     },
   };
