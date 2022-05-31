@@ -2,6 +2,7 @@ import React, { useContext, useState, createContext } from 'react';
 import axios from 'axios';
 import cookie from 'js-cookie';
 import endPoints from '@services/api';
+import { useRouter } from 'next/router';
 
 const AuthContext = createContext();
 
@@ -16,6 +17,7 @@ export const useAuth = () => {
 
 const useProviderAuth = () => {
   const [user, setUser] = useState(null);
+  const router = useRouter();
 
   const options = {
     Headers: {
@@ -37,7 +39,7 @@ const useProviderAuth = () => {
     cookie.remove('token');
     setUser(null);
     delete axios.defaults.headers.Authorization;
-    window.location.href = '/';
+    router.push('/');
   };
   const auth = async () => {
     try {
@@ -45,7 +47,7 @@ const useProviderAuth = () => {
       const { data: userProfile } = await axios(endPoints.auth.profile);
       setUser(userProfile);
     } catch (e) {
-      window.location.href = '/';
+      router.push('/');
     }
   };
   return {

@@ -88,7 +88,7 @@ const FormProduct = ({ setOpen ,setAlert, product })=>{
                 id="description"
                 autoComplete="description"
                 rows="3"
-                className="form-textarea mt-1 block w-full mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                className="form-textarea mt-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md"
               />
             </div>
             <div className="col-span-6">
@@ -110,7 +110,7 @@ const FormProduct = ({ setOpen ,setAlert, product })=>{
                         className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                       >
                         <span>Upload a file</span>
-                        <input defaultValue={(product.images) ? product?.images[0] : null} id="images" name="images" type="file" className="sr-only" />
+                        <input defaultValue={(product?.images) ? product?.images[0] : null} id="images" name="images" type="file" className="sr-only" />
                       </label>
                       <p className="pl-1">or drag and drop</p>
                     </div>
